@@ -18,5 +18,6 @@ class LoggerInitializer : Initializer<Unit> {
         Timber.d("LoggerInitializer is initialized.")
     }
 
-    override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()
+    override fun dependencies(): List<Class<out Initializer<*>>> =
+        listOf(TimberInitializer::class.java)
 }

@@ -27,13 +27,8 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="io.github.ovso.sdksearch.initializer.TimberInitializer"
+                android:name="io.github.ovso.sdksearch.initializer.LoggerInitializer"
                 android:value="androidx.startup" />
-            <!--
-                        <meta-data
-                            android:name="io.github.ovso.sdksearch.initializer.LoggerInitializer"
-                            android:value="androidx.startup" />
-            -->
         </provider>
     </application>
 
