@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="io.github.ovso.sdksearch">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,6 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="io.github.ovso.sdksearch.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="io.github.ovso.sdksearch.initializer.TimberInitializer"
+                android:value="androidx.startup" />
+            <!--
+                        <meta-data
+                            android:name="io.github.ovso.sdksearch.initializer.LoggerInitializer"
+                            android:value="androidx.startup" />
+            -->
+        </provider>
     </application>
 
 </manifest>
