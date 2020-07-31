@@ -9,12 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="io.github.ovso.sdksearch.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_navigation_home_to_webFragment"
-            app:destination="@id/webFragment"
-            app:enterAnim="@anim/nav_default_enter_anim" />
-    </fragment>
+        tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -27,13 +22,4 @@
         android:name="io.github.ovso.sdksearch.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/webFragment"
-        android:name="io.github.ovso.sdksearch.WebFragment"
-        android:label="fragment_web"
-        tools:layout="@layout/fragment_web">
-        <argument
-            android:name="arg"
-            app:argType="integer[]" />
-    </fragment>
 </navigation>
