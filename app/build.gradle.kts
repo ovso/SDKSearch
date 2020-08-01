@@ -111,8 +111,10 @@ dependencies {
     implementation("com.jakewharton.timber:timber:4.7.1")
     implementation("com.orhanobut:logger:2.2.0")
 
-    // search
-    implementation("com.github.Ferfalk:SimpleSearchView:0.1.5")
+    // rx
+    implementation("io.reactivex.rxjava3:rxjava:3.0.5")
+    implementation("io.reactivex.rxjava3:rxkotlin:3.0.0")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
 
     testImplementation("junit:junit:4.13")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
