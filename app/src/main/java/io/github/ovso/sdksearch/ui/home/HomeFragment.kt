@@ -9,8 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import io.github.ovso.sdksearch.R
+import io.github.ovso.sdksearch.ui.main.Log
+import io.github.ovso.sdksearch.ui.main.MainActivity
+import timber.log.Timber
 
-class HomeFragment : Fragment() {
+typealias TLog = Timber
+
+class HomeFragment : Fragment(), MainActivity.OnSearchListener {
 
     private lateinit var homeViewModel: HomeViewModel
 
@@ -28,5 +33,25 @@ class HomeFragment : Fragment() {
         })
         textView.isClickable = true
         return root
+    }
+
+    override fun onPause() {
+        super.onPause()
+        TLog.d("onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        TLog.d("onStop()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        TLog.d("onDestroy()")
+    }
+
+    override fun onSearch(text: CharSequence) {
+        Log.d("onSearch = $text")
+        Log.d("onSearch text = ${arguments?.get("text")}")
     }
 }

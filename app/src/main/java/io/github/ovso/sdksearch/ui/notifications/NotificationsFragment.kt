@@ -8,9 +8,15 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.orhanobut.logger.Logger
 import io.github.ovso.sdksearch.R
+import io.github.ovso.sdksearch.ui.main.MainActivity
+import timber.log.Timber
 
-class NotificationsFragment : Fragment() {
+typealias TLog = Timber
+typealias Log = Logger
+
+class NotificationsFragment : Fragment(), MainActivity.OnSearchListener {
 
     private lateinit var notificationsViewModel: NotificationsViewModel
 
@@ -27,5 +33,9 @@ class NotificationsFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+    override fun onSearch(text: CharSequence) {
+        Log.d("onSearch = $text")
     }
 }

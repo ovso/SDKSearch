@@ -2,13 +2,21 @@ package io.github.ovso.sdksearch.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.orhanobut.logger.Logger
 import io.github.ovso.sdksearch.R
 import io.github.ovso.sdksearch.base.DataBindingActivity
 import io.github.ovso.sdksearch.databinding.ActivityMainBinding
+import timber.log.Timber
+
+
+typealias Log = Logger
+typealias TLog = Timber
 
 class MainActivity : DataBindingActivity() {
 
@@ -31,6 +39,19 @@ class MainActivity : DataBindingActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+        observer()
+    }
+
+    private fun observer() {
+        fun getCurrentFragment(): Fragment? {
+            return supportFragmentManager
+                .primaryNavigationFragment
+                ?.childFragmentManager
+                ?.fragments?.first()
+        }
+        viewModel.searchText.observe(this, Observer { text ->
+            (getCurrentFragment() as? OnSearchListener)?.onSearch(text)
+        })
     }
 
     private fun performDataBinding() {
@@ -39,5 +60,9 @@ class MainActivity : DataBindingActivity() {
             it.lifecycleOwner = this
             it.executePendingBindings()
         }
+    }
+
+    interface OnSearchListener {
+        fun onSearch(text: CharSequence)
     }
 }
