@@ -52,6 +52,5 @@ class HomeFragment : Fragment(), MainActivity.OnSearchListener {
 
     override fun onSearch(text: CharSequence) {
         Log.d("onSearch = $text")
-        Log.d("onSearch text = ${arguments?.get("text")}")
     }
 }
