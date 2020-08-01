@@ -2,24 +2,22 @@ package io.github.ovso.sdksearch.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.github.ovso.sdksearch.R
 import io.github.ovso.sdksearch.base.DataBindingActivity
 import io.github.ovso.sdksearch.databinding.ActivityMainBinding
 
 class MainActivity : DataBindingActivity() {
 
-    //    private val binding: ActivityMainBinding by binding(R.layout.activity_main)
+    private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
     private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityMainBinding = binding(R.layout.activity_main)
+        performDataBinding()
         supportActionBar?.hide()
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -33,5 +31,13 @@ class MainActivity : DataBindingActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+    }
+
+    private fun performDataBinding() {
+        binding.also {
+            it.viewModel = viewModel
+            it.lifecycleOwner = this
+            it.executePendingBindings()
+        }
     }
 }
