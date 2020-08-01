@@ -65,6 +65,8 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/main_search_hint"
                 android:maxLines="1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.onTextChanged(text)}"
+                android:textColor="@android:color/white"
                 android:textColorHint="@color/colorSearchHint"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/iv_main_search_clear"
@@ -73,10 +75,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_main_search_clear"
+                visible="@{viewModel.isClearVisible()}"
                 android:layout_width="?actionBarSize"
                 android:layout_height="?actionBarSize"
                 android:scaleType="center"
-                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
