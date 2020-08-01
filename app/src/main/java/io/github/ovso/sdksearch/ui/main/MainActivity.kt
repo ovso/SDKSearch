@@ -28,6 +28,7 @@ class MainActivity : DataBindingActivity() {
         performDataBinding()
         supportActionBar?.hide()
         val navController = findNavController(R.id.nav_host_fragment)
+        navController.addOnDestinationChangedListener(viewModel::onDestinationChanged)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
