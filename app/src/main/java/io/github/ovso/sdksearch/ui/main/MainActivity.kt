@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.orhanobut.logger.Logger
+import dagger.hilt.android.AndroidEntryPoint
 import io.github.ovso.sdksearch.R
 import io.github.ovso.sdksearch.base.DataBindingActivity
 import io.github.ovso.sdksearch.databinding.ActivityMainBinding
@@ -18,6 +19,7 @@ import timber.log.Timber
 typealias Log = Logger
 typealias TLog = Timber
 
+@AndroidEntryPoint
 class MainActivity : DataBindingActivity() {
 
     private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
