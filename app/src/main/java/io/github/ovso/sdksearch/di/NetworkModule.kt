@@ -27,7 +27,7 @@ object NetworkModule {
   fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
       .client(okHttpClient)
-      .baseUrl("https://pokeapi.co/api/v2/")
+      .baseUrl("https:")
       .addConverterFactory(MoshiConverterFactory.create())
       .build()
   }

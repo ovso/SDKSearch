@@ -19,7 +19,6 @@ import timber.log.Timber
 typealias Log = Logger
 typealias TLog = Timber
 
-@AndroidEntryPoint
 class MainActivity : DataBindingActivity() {
 
     private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
