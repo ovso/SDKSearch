@@ -44,8 +44,9 @@ class MainActivity : DataBindingActivity() {
         binding.navView.setupWithNavController(navController)
         observer()
 
-        Thread{
-            val doc: Document = Jsoup.connect("https://kotlinlang.org/?q=loop&p=0").timeout(1000*60).get()
+        Thread {
+            val doc: Document =
+                Jsoup.connect("https://kotlinlang.org/?q=loop&p=0").timeout(1000 * 60).get()
             doc.body()
         }.start()
     }
