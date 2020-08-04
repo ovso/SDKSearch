@@ -119,6 +119,9 @@ dependencies {
     implementation("io.reactivex.rxjava3:rxkotlin:3.0.0")
     implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
 
+    // html parsing
+    implementation("org.jsoup:jsoup:1.13.1")
+
     testImplementation("junit:junit:4.13")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")

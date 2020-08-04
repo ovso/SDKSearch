@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="io.github.ovso.sdksearch">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".SDSearchApp"
         android:allowBackup="true"
