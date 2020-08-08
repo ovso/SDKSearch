@@ -44,10 +44,12 @@ class MainActivity : DataBindingActivity() {
         binding.navView.setupWithNavController(navController)
         observer()
 
+        "ais-infinite-hits"
         Thread {
             val doc: Document =
                 Jsoup.connect("https://kotlinlang.org/?q=loop&p=0").timeout(1000 * 60).get()
-            doc.body()
+            val body = doc.body()
+            val elementsByClass = body.getElementsByClass("ais-infinite-hits")
         }.start()
     }
 
