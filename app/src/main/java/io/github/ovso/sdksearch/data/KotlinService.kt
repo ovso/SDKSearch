@@ -1,5 +1,8 @@
 package io.github.ovso.sdksearch.data
 
+import com.google.gson.JsonElement
+import com.google.gson.JsonObject
+import com.google.gson.JsonPrimitive
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -20,7 +23,7 @@ interface KotlinService {
     @POST("/1/indexes/*/queries?x-algolia-application-id=7961PKYRXV&x-algolia-api-key=604fa45d89af86bdf9eed4cc862b2d0b")
     fun searchKotlin(
         @Body k: KotlinReq
-    ): Single<Any>
+    ): Single<KotlinResponse>
 
     @GET("")
     fun searchAndroid(q: String): Single<Any>

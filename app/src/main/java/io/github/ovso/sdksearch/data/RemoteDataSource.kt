@@ -2,6 +2,8 @@ package io.github.ovso.sdksearch.data
 
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
+import com.google.gson.JsonObject
+import com.google.gson.JsonPrimitive
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.core.Single
 import okhttp3.ResponseBody
@@ -16,7 +18,7 @@ object RemoteDataSource {
         return createRetrofit().create(KotlinService::class.java)
     }
 
-    fun searchKotlin(k: KotlinReq): Single<Any> {
+    fun searchKotlin(k: KotlinReq): Single<KotlinResponse> {
         return api().searchKotlin(k)
     }
 

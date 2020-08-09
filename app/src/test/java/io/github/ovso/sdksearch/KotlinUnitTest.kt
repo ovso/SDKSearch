@@ -27,17 +27,7 @@ class KotlinUnitTest {
             .subscribe({
                 println(it.toString())
             }, {
-
-                it.printStackTrace()
-                val httpException = it as? HttpException
-                println(httpException?.message())
-                println(httpException?.code())
-                println(httpException?.response())
-                println(httpException?.response()?.body())
-                println(httpException?.response()?.message())
-                println(httpException?.response()?.code())
-                println(httpException?.response()?.errorBody()?.string())
-                println(httpException?.response()?.raw()?.body?.string())
+                println(it.message)
             })
     }
 
