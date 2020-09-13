@@ -67,11 +67,11 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 //    implementation(kotlin("stdlib", "1.3.72"))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.10")
     implementation("androidx.core:core-ktx:1.3.1")
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("com.google.android.material:material:1.1.0")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("com.google.android.material:material:1.2.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
@@ -93,8 +93,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.7.2")
 
     // coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.7")
 
     // dagger
@@ -110,7 +110,7 @@ dependencies {
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.28.1-alpha")
 
     // debugging
-    implementation("androidx.startup:startup-runtime:1.0.0-alpha02")
+    implementation("androidx.startup:startup-runtime:1.0.0-alpha03")
     implementation("com.jakewharton.timber:timber:4.7.1")
     implementation("com.orhanobut:logger:2.2.0")
 
@@ -123,7 +123,7 @@ dependencies {
     implementation("org.jsoup:jsoup:1.13.1")
 
     testImplementation("junit:junit:4.13")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 
 }
